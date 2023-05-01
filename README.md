@@ -1,2 +1,2 @@
 # cpp_concurrency_patterns
-concorrency patterns in cpp
+concurrency patterns in cpp
