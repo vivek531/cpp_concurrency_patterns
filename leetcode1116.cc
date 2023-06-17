@@ -50,7 +50,7 @@ public:
     while(this->iteration < 2*this->n) {
         std::cout << "iteration num" << this->iteration << "thread " << "even" << std::endl;
     std::unique_lock lk(mtx);
-    cv.wait_until(lk,std::chrono::system_clock::now() + 10ms, [this]{
+    cv.wait(lk, [this]{
         if(this->iteration % 2 == 0 && this->iteration % 4 == 0) {
         return true;
         } else {
@@ -69,7 +69,7 @@ public:
     while(this->iteration < 2*this->n) {
         std::cout << "iteration num" << this->iteration << "thread " << "odd" << std::endl;
     std::unique_lock lk(mtx);
-    cv.wait_until(lk,std::chrono::system_clock::now() + 10ms, [this]{
+    cv.wait(lk [this]{
         if(this->iteration % 2 == 0 && this->iteration % 4 != 0) {
         return true;
         } else {
